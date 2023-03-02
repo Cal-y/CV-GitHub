@@ -1,0 +1,17 @@
+:root {
+  --font-family: fantasia;
+  --light: ;
+  --text: #333;
+  --h4: black;
+  --bg-header: rgb(213, 243, 239);
+  --blue: rgb(36, 133, 146);
+  --light-blue: #79cadf;
+  --dark-blue: #05386b;
+  --bg-main: white;
+  --light-linear: rgb(161, 226, 238);
+  --dark-linear: rgb(62, 221, 241);
+  --footer-text: #e7dada;
+  --pink: rgb(245, 137, 209);
+  --linear-container1: #a0dcf8;
+  --linear-container2: rgb(12, 0, 2);
+}

@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid:
+    "photo header" auto
+    "aside main" 1fr
+    "footer footer" auto
+    / 350px auto;
+  min-height: 100vh;
+}
+@media (max-width: 480px) {
+  .grid-container {
+    grid:
+      "header" auto
+      "main" auto
+      "photo" auto
+      "aside" auto
+      "footer" auto
+      / auto;
+  }
+}
+
+header {
+  grid-area: header;
+  font-family: "Merienda One", cursive;
+  background: var(--light-linear);
+  padding: 7rem 5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 03s;
+  transform: all 1s;
+}
+@media (max-width: 480px) {
+  header {
+    padding: 5rem 2rem;
+  }
+}
+
+header h1 {
+  font-size: 5.5rem;
+  font-weight: 300;
+  letter-spacing: 1rem;
+  color: var(--blue);
+}
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 4rem;
+  }
+}
+
+header p {
+  font-size: 3rem;
+}
+
+.slide-lineg {
+  font-size: 2rem;
+  text-decoration: none;
+  position: relative;
+  color: var(--dark-blue);
+  font-family: "Merienda One", cursive;
+  cursor: pointer;
+  z-index: 20;
+}
+.slide-lineg::after {
+  content: "";
+  position: absolute;
+  background: var(--light-linear);
+  width: 100%;
+  top: 0%;
+  left: 0;
+  height: 60px;
+  transform: scaleX(0);
+  transition: transform 0.2s;
+  transform-origin: 0% 0;
+  z-index: -1;
+}
+
+.slide-lineg:hover::after {
+  transform: scaleX(1);
+}
+
+.slide-lineg:hover {
+  color: var(--bg-main);
+}
+
+.photo {
+  grid-area: photo;
+  padding: 5rem;
+  background: var(--bg-main);
+  border-right: 0.2px solid var(--dark-linear);
+}
+.photo img {
+  border-radius: 50%;
+  transition: all 2s ease-in-out;
+}
+.photo img:hover {
+  transform: scale(1.40001);
+  filter: sepia(100%);
+}
+
+@media (max-width: 480px) {
+  .photo img {
+    transform: none;
+  }
+  .photo img:hover {
+    transform: none;
+  }
+}
+
+header:hover {
+  background: var(--dark-linear);
+}
+
+aside {
+  grid-area: aside;
+  background: linear-gradient(
+    to bottom,
+    var(--linear-container1),
+    var(--linear-container2)
+  );
+  border-right: 0.2px solid var(--pink);
+  padding: 2rem;
+  min-height: 1500px;
+  text-align: center;
+  line-height: 2.42rem;
+  font-size: 1.6rem;
+}
+aside h3 {
+  margin-bottom: 0;
+  font-size: 1.8rem;
+}
+
+aside h2.title-small {
+  margin-bottom: 0;
+  font-size: 2.6rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container__progressbars {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 270px;
+  width: 100%;
+  min-height: 100%;
+}
+
+.progressbar {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 4em;
+  transform: rotate(-90deg);
+  padding: 5px 5px;
+}
+
+.progressbar__svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.progressbar__svg-circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 10;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  stroke: white;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+
+.shadow-html {
+  filter: drop-shadow(0 0 5px #f35825);
+}
+
+.shadow-css {
+  filter: drop-shadow(0 0 5px #28aff3);
+}
+
+.shadow-scss {
+  filter: drop-shadow(0 0 5px #ebcb1b);
+}
+
+.circle-html {
+  animation: anim_circle-html 1s ease-in-out forwards;
+}
+
+.circle-css {
+  animation: anim_circle-css 1s ease-in-out forwards;
+}
+
+.circle-scss {
+  animation: anim_circle-scss 1s ease-in-out forwards;
+}
+
+.progressbar__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0.25em 0.5em;
+  color: white;
+  font-family: "Cinzel", serif;
+  font-family: "Gruppo", cursive;
+  font-family: "Merienda", cursive;
+  letter-spacing: 0.8rem;
+  border-radius: 0.25em;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+@keyframes anim_circle-html {
+  to {
+    stroke-dashoffset: 110;
+  }
+}
+
+@keyframes anim_circle-css {
+  to {
+    stroke-dashoffset: 198;
+  }
+}
+
+@keyframes anim_circle-scss {
+  to {
+    stroke-dashoffset: 330;
+  }
+}
+
+main {
+  grid-area: main;
+  padding: 3rem;
+  font-family: "Merienda One", cursive;
+  font-size: 1.4rem;
+  letter-spacing: 2rem;
+  line-height: 2.2rem;
+  padding-bottom: 2rem;
+}
+@media (max-width: 480px) {
+  main {
+    padding: 5rem 1.5rem;
+  }
+}
+
+main h2 {
+  margin-bottom: 4rem;
+  letter-spacing: 0.8rem;
+  font-family: fantasia;
+  text-align: center;
+}
+
+main p {
+  line-height: 2rem;
+  letter-spacing: 0.15rem;
+}
+
+main .title-small {
+  padding: 10px 0 0 0;
+}
+
+main .experience {
+  display: flex;
+  letter-spacing: 0.2rem;
+  font-family: fantasia;
+}
+main .experience .timeline {
+  text-align: center;
+  color: var(--h4);
+  padding-right: 2rem;
+  letter-spacing: 0.4rem;
+}
+main .experience .timeline p {
+  margin: 1.6rem;
+  letter-spacing: 0.4rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  padding-left: 3rem;
+}
+main .experience .timeline .textw {
+  font-size: 2rem;
+  font-family: fantasia;
+  letter-spacing: 0.4rem;
+}
+main .experience .timeline .textwx {
+  font-size: 2rem;
+  font-family: fantasia;
+  letter-spacing: 0.4rem;
+}
+main .experience .content {
+  padding: 0 0.5rem;
+}
+
+main .experience .content h2 {
+  margin: 0;
+  letter-spacing: 0.4rem;
+}
+
+main .experience .content ul {
+  margin: 2rem 0;
+  list-style: none;
+  padding-left: 3.6rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+li::before {
+  content: "•";
+  color: rgb(34, 180, 180);
+  display: inline-block;
+  width: 2em;
+  margin-left: -1em;
+}
+
+.pres1 {
+  text-align: center;
+  line-height: 2;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50em;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+footer {
+  grid-area: footer;
+  border-top: 0.2px solid black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 2rem 0;
+  background: linear-gradient(to top, rgb(43, 41, 41), rgb(12, 0, 2));
+  color: #e7dada;
+}
+
+footer h2 {
+  margin: 4rem;
+  font-size: 4rem;
+}
+
+footer a {
+  text-decoration: none;
+  cursor: pointer;
+  background: linear-gradient(to top, rgb(243, 202, 209), rgb(224, 69, 95));
+  border-radius: 0.4rem;
+  color: white;
+  font-size: 4rem;
+  margin: 3.5rem 3.5rem;
+  padding: 2rem;
+  transition: all 0.8s;
+}
+
+footer a:hover {
+  color: white;
+  font-size: 6rem;
+  padding: 3.5rem;
+  opacity: 0.8;
+  filter: grayscale(85%);
+}

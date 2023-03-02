@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "sass": "node-sass -w scss -o css"
+  },
+  "dependencies": {
+    "mode-sass": "^1.0.0",
+    "node-sass": "^8.0.0"
+  }
+}
