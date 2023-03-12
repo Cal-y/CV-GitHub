@@ -349,6 +349,7 @@ h4 {
 
 footer {
   grid-area: footer;
+  min-width: 1500px;
   border-top: 0.2px solid black;
   display: flex;
   flex-direction: column;
@@ -358,6 +359,12 @@ footer {
   padding: 0 0 2rem 0;
   background: linear-gradient(to top, rgb(43, 41, 41), rgb(12, 0, 2));
   color: #e7dada;
+}
+
+@media (max-width: 480px) {
+  footer {
+    min-width: 729.8px;
+  }
 }
 
 footer h2 {
